@@ -3,7 +3,6 @@ import Layout from '../../components/layout'
 import Date from '../../components/date'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import utilStyles from '../../styles/utils.module.css'
-import { useRouter } from 'next/router'
 
 export function getStaticPaths() {
   const paths = getAllPostIds()
