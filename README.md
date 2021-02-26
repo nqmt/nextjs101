@@ -2,7 +2,7 @@
 
 ----
 
-![Image of Yaktocat](preview.gif)
+![Image of Yaktocat](doc/preview.gif)
 
 # Todo
 
@@ -12,7 +12,7 @@
 - [x] dynamic router
 - [x] connect to api
 - [ ] auth token
-- [ ] swr
+- [x] swr
 - [ ] manage api
 - [ ] try typescript
 

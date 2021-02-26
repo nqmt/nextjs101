@@ -4,11 +4,7 @@ import {useRouter} from "next/router";
 
 export default function Layout({children, title}) {
   const router = useRouter()
-  
-  const isMenuActive = (menu) => {
-    if (router.pathname === '/' && menu === 'home') return 'nav-link active'
-    return router.pathname.includes(menu) ? 'nav-link active' : 'nav-link'
-  }
+  const isMenuActive = (path) => router.pathname === path ? 'nav-link active' : 'nav-link'
   
   return (
     <>
@@ -29,12 +25,12 @@ export default function Layout({children, title}) {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <Link href="/">
                   <li className="nav-item">
-                    <a className={isMenuActive('home')} aria-current="page">Home</a>
+                    <a className={isMenuActive('/')} aria-current="page">Home</a>
                   </li>
                 </Link>
                 <Link href="/teams">
                   <li className="nav-item">
-                    <a className={isMenuActive('teams')} aria-current="page">Teams</a>
+                    <a className={isMenuActive('/teams')} aria-current="page">Teams</a>
                   </li>
                 </Link>
               </ul>
