@@ -3,7 +3,7 @@
 - [x] styling with bootstrap
 - [x] layout
 - [x] router
-- [ ] dynamic router
-- [ ] connect to api
-- [ ] state
+- [x] dynamic router
+- [x] connect to api
 - [ ] auth token
+- [ ] swr
