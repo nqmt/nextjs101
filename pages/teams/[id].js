@@ -8,12 +8,12 @@ const mockTeam = {
 
 export async function getServerSideProps(context) {
   if (!mockTeam[context.params.id]) {
-   return {
-     redirect: {
-       destination: '/teams',
-       statusCode: 404,
-     },
-   }
+    return {
+      redirect: {
+        destination: '/teams',
+        statusCode: 404,
+      },
+    }
   }
   
   return {
