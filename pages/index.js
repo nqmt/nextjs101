@@ -1,49 +1,56 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Date from '../components/date'
-import Layout, {siteTitle} from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import {getSortedPostsData} from "../lib/posts";
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData
-    }
-  }
-}
-
-export default function Home({allPostsData}) {
+function Home({allPostsData}) {
   return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Just fun</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-  
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
+    <>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand js-in-css" href="#">Nav</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Link</a>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a className="dropdown-item" href="#">Action</a></li>
+                  <li><a className="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr className="dropdown-divider"/>
+                  </li>
+                  <li><a className="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form className="d-flex">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              <button className="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+      <style jsx>{`
+        .js-in-css {
+          color: red;
+        }
+      `}</style>
+    </>
   )
 }
+
+
+export default Home
