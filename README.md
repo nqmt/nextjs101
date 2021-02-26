@@ -15,3 +15,4 @@
 - [x] connect to api
 - [ ] auth token
 - [ ] swr
+- [ ] manage api
