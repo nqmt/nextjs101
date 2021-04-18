@@ -40,3 +40,7 @@ Warning: Invalid DOM property `crossorigin`. Did you mean `crossOrigin`?
 const res = await fetch('https://b0b018d627eafa8c46c6d0910b0896c6.m.pipedream.net/')
 const teams = await res.json()
 ```
+
+### Issue
+
+- https://stackoverflow.com/questions/62331868/wrong-class-names-on-pages-with-different-content-rendered-on-client-than-on-ser
